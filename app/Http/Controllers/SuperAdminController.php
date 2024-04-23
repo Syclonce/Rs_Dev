@@ -1,0 +1,153 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\rsbank;
+use App\Models\rsdepartemen;
+use App\Models\rspasien;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+
+class SuperAdminController extends Controller
+{
+    //
+    public function index()
+    {
+        $title = 'Rs Apps';
+        return view('superadmin.index', compact('title'));
+    }
+    public function pasienadd()
+    {
+        $rspasiens = rspasien::all();
+        $title = 'Rs Apps';
+        return view('superadmin.rsadd', compact('rspasiens', 'title'));
+    }
+
+    public function pasinadd(Request $request)
+    {
+        // Validate the request data
+        $validator = Validator::make($request->all(), [
+            'norm' => 'required',
+            'tgldftar' => 'required',
+            'name' => 'required',
+            // Add more validation rules for other fields as needed
+        ]);
+
+        // If validation fails, redirect back with errors
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        // Ambil data dari form
+        $norm = $request->input('norm');
+        $tgldaftar = $request->input('tgldftar');
+        $nama = $request->input('name');
+        $seks = $request->input('sex');
+        $tgllahir = $request->input('tgllahir');
+        $menikah = $request->input('menikah');
+        $agama = $request->input('agama');
+        $ibu = $request->input('ibukdg');
+        $goldar = $request->input('goldar');
+        $perkerja = $request->input('pkj');
+        $pendidikan = $request->input('pendidikan');
+        $penjamin = $request->input('penjamin');
+        $nomorkartu = $request->input('nomorkartu');
+        $keluarga = $request->input('kgr');
+        $namakeluarga = $request->input('namakgr');
+        $noktp = $request->input('noktp');
+        $alamat = $request->input('alamat');
+        $provinsi = $request->input('provinsi');
+        $kota = $request->input('kota');
+        $kecamatan = $request->input('kecamatan');
+        $desa = $request->input('desa');
+        $notpl = $request->input('notpl');
+        $email = $request->input('email');
+        $nowp = $request->input('nowp');
+
+
+        // Simpan data ke database
+        $pasienData = rspasien::create([
+            'norm' => $request->input('norm'),
+            'tgldaf' => $request->input('tgldftar'),
+            'nama' => $request->input('name'),
+            'sex' => $request->input('sex'),
+            'tgllhr' => $request->input('tgllahir'),
+            'menikah' => $request->input('menikah'),
+            'agama' => $request->input('agama'),
+            'ibukng' => $request->input('ibukdg'),
+            'goldar' => $request->input('goldar'),
+            'pkj' => $request->input('pkj'),
+            'pddk' => $request->input('pendidikan'),
+            'pjmn' => $request->input('penjamin'),
+            'nokt' => $request->input('nomorkartu'),
+            'kga' => $request->input('kgr'),
+            'nmakga' => $request->input('namakgr'),
+            'noktp' => $request->input('noktp'),
+            'Alamat' => $request->input('alamat'),
+            'pvi' => $request->input('provinsi'),
+            'kta' => $request->input('kota'),
+            'kec' => $request->input('kecamatan'),
+            'des' => $request->input('desa'),
+            'tpl' => $request->input('notpl'),
+            'email' => $request->input('email'),
+            'nowp' => $request->input('nowp')
+        ]);
+
+        // Check if the patient was successfully created
+        if ($pasienData) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    public function bank()
+    {
+        $namabank = rsbank::all();
+        $title = 'Rs Apps';
+        return view('superadmin.bank', compact('title', 'namabank'));
+    }
+    public function banks(Request $request)
+    {
+        $nama = $request->input('name');
+
+        $namabank = rsbank::create([
+            'nama' => $request->input('name'),
+        ]);
+
+        if ($namabank) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    public function departem()
+    {
+        $depar = rsdepartemen::all();
+        $title = 'Rs Apps';
+        return view('superadmin.depar', compact('title', 'depar'));
+    }
+
+    public function depar(Request $request)
+    {
+        $nama = $request->input('name');
+
+        $namabank = rsdepartemen::create([
+            'nama' => $request->input('name'),
+        ]);
+
+        if ($namabank) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+}

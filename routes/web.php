@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SuperAdminController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -20,17 +21,27 @@ Route::middleware('auth')->group(function () {
 
 
 
+Route::middleware(['auth', 'verified', 'role:Super-Admin'])->group(function () {
+    Route::get('/superadmin', [SuperAdminController::class, 'index'])->name('superadmin');
+    Route::get('/superadmin/add', [SuperAdminController::class, 'pasienadd'])->name('superadmin.add');
+    Route::post('/superadmin/add', [SuperAdminController::class, 'pasinadd'])->name('superadmin.add');
+    Route::get('/superadmin/bank', [SuperAdminController::class, 'bank'])->name('superadmin.bank');
+    Route::post('/superadmin/bank', [SuperAdminController::class, 'banks'])->name('superadmin.bank');
+    Route::get('/superadmin/departemen', [SuperAdminController::class, 'departem'])->name('superadmin.departemen');
+    Route::post('/superadmin/departemen', [SuperAdminController::class, 'depar'])->name('superadmin.departemen');
+});
+
 Route::get('admin', function () {
-    return '<h1> Admin </h1>';
+    Route::get('/', [SuperAdminController::class, 'index'])->name('superadmin');
 })->middleware(['auth', 'verified', 'role:Admin|Super-Admin']);
 
 Route::get('user', function () {
     return '<h1> user </h1>';
 })->middleware(['auth', 'verified', 'role:User|Super-Admin']);
 
-Route::get('superadmin', function () {
-    return '<h1> Super-Admin </h1>';
-})->middleware(['auth', 'verified', 'role:Super-Admin']);
+// Route::get('superadmin', function () {
+//     return '<h1> Super-Admin </h1>';
+// })->middleware(['auth', 'verified', 'role:Super-Admin']);
 
 
 require __DIR__ . '/auth.php';
