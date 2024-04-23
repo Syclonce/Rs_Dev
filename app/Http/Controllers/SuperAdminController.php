@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\rsbank;
+use App\Models\rsbidang;
 use App\Models\rsdepartemen;
 use App\Models\rspasien;
 use Illuminate\Http\Request;
@@ -143,6 +144,30 @@ class SuperAdminController extends Controller
         ]);
 
         if ($namabank) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    public function bidang()
+    {
+        $bidangs = rsbidang::all();
+        $title = 'Rs Apps';
+        return view('superadmin.bidang', compact('title', 'bidangs'));
+    }
+
+    public function bidangs(Request $request)
+    {
+        $nama = $request->input('name');
+
+        $bidang = rsbidang::create([
+            'nama' => $request->input('name'),
+        ]);
+
+        if ($bidang) {
             // Redirect with success message
             return redirect()->back()->with('success', 'Patient data has been successfully stored.');
         } else {

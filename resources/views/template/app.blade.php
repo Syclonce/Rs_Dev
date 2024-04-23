@@ -260,16 +260,24 @@
               <li class="nav-item">
                 <a href="{{  route('superadmin.departemen') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add departemen</p>
+                  <p>Add Departemen</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{{  route('superadmin.bidang') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
+                  <p>Add Bidang</p>
                 </a>
               </li>
             </ul>
+          </li>
+          <li class="nav-item">
+            <a href="pages/widgets.html" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+                Web Seting
+              </p>
+            </a>
           </li>
           <li class="nav-item">
             <a href="pages/widgets.html" class="nav-link">
