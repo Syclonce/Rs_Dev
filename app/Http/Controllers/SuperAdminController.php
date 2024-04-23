@@ -175,4 +175,11 @@ class SuperAdminController extends Controller
             return redirect()->back()->with('error', 'Failed to store patient data.');
         }
     }
+
+    public function pegawai()
+    {
+        //$bidangs = rsbidang::all();
+        $title = 'Rs Apps';
+        return view('superadmin.pegawai', compact('title'));
+    }
 }
