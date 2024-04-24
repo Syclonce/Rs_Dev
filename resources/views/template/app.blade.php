@@ -217,6 +217,35 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
+                Registrasi
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{  route('superadmin.add') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rawat Jalan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Rawat Inap</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>UGD/IGD</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
                 User
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -272,13 +301,13 @@
               <li class="nav-item">
                 <a href="{{  route('superadmin.jabatan') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add Jabatan</p>
+                  <p>Jabatan</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{  route('superadmin.pendidikan') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add pendidiakan</p>
+                  <p>Add pendidikan</p>
                 </a>
               </li>
             </ul>
@@ -300,6 +329,7 @@
               </p>
             </a>
           </li>
+          
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
