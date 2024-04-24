@@ -37,6 +37,16 @@ Route::middleware(['auth', 'verified', 'role:Super-Admin'])->group(function () {
     Route::post('/superadmin/pendidikan', [SuperAdminController::class, 'pendidikans'])->name('superadmin.pendidikan');
     Route::get('/superadmin/grupjabatan', [SuperAdminController::class, 'grupjabatan'])->name('superadmin.grupjabatan');
     Route::post('/superadmin/grupjabatan', [SuperAdminController::class, 'grupjabatans'])->name('superadmin.grupjabatan');
+    Route::get('/superadmin/resikokerja', [SuperAdminController::class, 'resikokerja'])->name('superadmin.resikokerja');
+    Route::post('/superadmin/resikokerja', [SuperAdminController::class, 'resikokerjas'])->name('superadmin.resikokerja');
+    Route::get('/superadmin/statswp', [SuperAdminController::class, 'statwp'])->name('superadmin.statwp');
+    Route::post('/superadmin/statswp', [SuperAdminController::class, 'statwps'])->name('superadmin.statwp');
+
+    Route::get('/superadmin/emergency', [SuperAdminController::class, 'emergency'])->name('superadmin.emergency');
+    Route::post('/superadmin/emergency', [SuperAdminController::class, 'emergencys'])->name('superadmin.emergency');
+
+
+
     Route::get('/superadmin/pegawai', [SuperAdminController::class, 'pegawai'])->name('superadmin.pegawai');
 });
 
