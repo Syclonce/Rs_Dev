@@ -240,7 +240,43 @@
               <li class="nav-item">
                 <a href="./index3.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>UGD/IGD</p>
+                  <p>Paket Perawatan</p>
+                </a>
+                </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pasien Baru</p>
+                </a>
+                </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Surat Pasien</p>
+                </a>
+                </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Cetak Kartu</p>
+                </a>
+                </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pasien Dalam Perawatan</p>
+                </a>
+                </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>BPJS VKLAIM</p>
+                </a>
+                </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Jadwal Dokter</p>
                 </a>
               </li>
             </ul>
@@ -301,6 +337,149 @@
                 <a href="./index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>DEPO</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Seting</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- akhir -->
+          <!-- awal -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+          
+                LABORATORIUM
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{  route('superadmin.add') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lab Umum</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lab Pathology</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Lab BDRS</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- akhir -->
+          <!-- awal -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+          
+                RADIOLOGI
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{  route('superadmin.add') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Transaksi</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>DEPO</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Seting</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- akhir -->
+          <!-- awal -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+          
+                UGD / IGD
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{  route('superadmin.add') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>UGD Umum</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PONEK</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>INFEKSIUS</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <!-- akhir -->
+          <!-- awal -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+          
+                E.MEDICAL RECORD
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{  route('superadmin.add') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Status</p>
+                  <i class="right fas fa-angle-left"></i>
+                </a>
+                <!-- submenu -->
+                <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>RL Report</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+              </li>
+              <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>RL Report</p>
                 </a>
               </li>
               <li class="nav-item">
