@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\rsbank;
 use App\Models\rsbidang;
 use App\Models\rsdepartemen;
+use App\Models\rsemergency;
+use App\Models\rsgrupjabatan;
 use App\Models\rsjabatan;
 use App\Models\rspasien;
 use App\Models\rspendidikan;
+use App\Models\rsreiskokerja;
+use App\Models\rsstatwp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -218,6 +222,106 @@ class SuperAdminController extends Controller
         ]);
 
         if ($bidang) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    public function grupjabatan()
+    {
+        $jabatans = rsjabatan::all();
+        $grupjabatans = rsgrupjabatan::all();
+        $title = 'Rs Apps';
+        return view('superadmin.grupjabatan', compact('title', 'grupjabatans', 'jabatans'));
+    }
+
+    public function grupjabatans(Request $request)
+    {
+
+        $grupjabatan = rsgrupjabatan::create([
+            'kode_jabatan' => $request->input('kode'),
+            'nama_grup_jabatan' => $request->input('name'),
+        ]);
+
+        if ($grupjabatan) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+
+    public function statwp()
+    {
+        $statwp = rsstatwp::all();
+        $title = 'Rs Apps';
+        return view('superadmin.statwp', compact('title', 'statwp'));
+    }
+
+
+    public function statwps(Request $request)
+    {
+
+        $statwp = rsstatwp::create([
+            'status' => $request->input('status'),
+            'ket' => $request->input('ket'),
+        ]);
+
+        if ($statwp) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    public function resikokerja()
+    {
+        $resikokerja = rsreiskokerja::all();
+        $title = 'Rs Apps';
+        return view('superadmin.resikokerja', compact('title', 'resikokerja'));
+    }
+
+    public function resikokerjas(Request $request)
+    {
+
+        $grupjabatan = rsreiskokerja::create([
+            'kode_kerja' => $request->input('kode'),
+            'nama_resiko' => $request->input('name'),
+        ]);
+
+        if ($grupjabatan) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    public function emergency()
+    {
+        $resikokerja = rsemergency::all();
+        $title = 'Rs Apps';
+        return view('superadmin.emergency', compact('title', 'resikokerja'));
+    }
+
+    public function emergencys(Request $request)
+    {
+
+        $grupjabatan = rsemergency::create([
+            'kode_emergency' => $request->input('kode'),
+            'nama_emergency' => $request->input('name'),
+            'indexs' => $request->input('status'),
+        ]);
+
+        if ($grupjabatan) {
             // Redirect with success message
             return redirect()->back()->with('success', 'Patient data has been successfully stored.');
         } else {
