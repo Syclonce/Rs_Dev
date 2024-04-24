@@ -219,7 +219,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
           
-                Registrasi
+                REGISTRASI
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -252,7 +252,7 @@
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
           
-                Kasir
+                KASIR
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
