@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\rsbank;
 use App\Models\rsbidang;
 use App\Models\rsdepartemen;
+use App\Models\rsjabatan;
 use App\Models\rspasien;
+use App\Models\rspendidikan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -165,6 +167,54 @@ class SuperAdminController extends Controller
 
         $bidang = rsbidang::create([
             'nama' => $request->input('name'),
+        ]);
+
+        if ($bidang) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    public function jabatan()
+    {
+        $jabatans = rsjabatan::all();
+        $title = 'Rs Apps';
+        return view('superadmin.jabatan', compact('title', 'jabatans'));
+    }
+
+    public function jabatans(Request $request)
+    {
+
+        $bidang = rsjabatan::create([
+            'kode_jabatan' => $request->input('kode'),
+            'nama_jabatan' => $request->input('name'),
+        ]);
+
+        if ($bidang) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    public function pendidikan()
+    {
+        $pendidikans = rspendidikan::all();
+        $title = 'Rs Apps';
+        return view('superadmin.pendidikan', compact('title', 'pendidikans'));
+    }
+
+    public function pendidikans(Request $request)
+    {
+
+        $bidang = rspendidikan::create([
+            'kode_pendidikan' => $request->input('kode'),
+            'nama_pendidikan' => $request->input('name'),
         ]);
 
         if ($bidang) {

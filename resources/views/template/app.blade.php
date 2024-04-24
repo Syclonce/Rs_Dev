@@ -180,7 +180,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link">
       {{-- <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8"> --}}
       <span class="brand-text font-weight-light">AdminLTE 3</span>
     </a>
@@ -267,6 +267,18 @@
                 <a href="{{  route('superadmin.bidang') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Bidang</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{  route('superadmin.jabatan') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Jabatan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{  route('superadmin.pendidikan') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add pendidiakan</p>
                 </a>
               </li>
             </ul>
@@ -916,7 +928,13 @@
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
+
+  $(function () {
+        bsCustomFileInput.init();
+    });
 </script>
+<!-- bs-custom-file-input -->
+<script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->
