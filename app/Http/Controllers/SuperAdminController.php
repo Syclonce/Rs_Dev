@@ -13,6 +13,7 @@ use App\Models\rspasien;
 use App\Models\rspendidikan;
 use App\Models\rsreiskokerja;
 use App\Models\rsruangan;
+use App\Models\rsstatuskerja;
 use App\Models\rsstatwp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -384,6 +385,31 @@ class SuperAdminController extends Controller
         ]);
 
         if ($metoderacik) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    //add status kerja
+    public function statsker()
+    {
+        $statsker = rsstatuskerja::all();
+        $title = 'Rs Apps';
+        return view('superadmin.statsker', compact('title','statsker'));
+    }
+
+    public function statskers(Request $request)
+    {
+
+        $statsker = rsstatuskerja::create([
+            'stat_kerja' => $request->input('kode'),
+            'ket_stats' => $request->input('name'),
+        ]);
+
+        if ($statsker) {
             // Redirect with success message
             return redirect()->back()->with('success', 'Patient data has been successfully stored.');
         } else {

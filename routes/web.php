@@ -60,6 +60,9 @@ Route::middleware(['auth', 'verified', 'role:Super-Admin'])->group(function () {
     Route::get('/superadmin/metoderacik', [SuperAdminController::class, 'metoderacik'])->name('superadmin.metoderacik');
     Route::post('/superadmin/metoderacik', [SuperAdminController::class, 'metoderaciks'])->name('superadmin.metoderacik');
 
+    Route::get('/superadmin/statsker', [SuperAdminController::class, 'statsker'])->name('superadmin.statsker');
+    Route::post('/superadmin/statsker', [SuperAdminController::class, 'statskers'])->name('superadmin.statsker');
+
     Route::get('/superadmin/pegawai', [SuperAdminController::class, 'pegawai'])->name('superadmin.pegawai');
 });
 
