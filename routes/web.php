@@ -23,22 +23,31 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth', 'verified', 'role:Super-Admin'])->group(function () {
     Route::get('/superadmin', [SuperAdminController::class, 'index'])->name('superadmin');
+
     Route::get('/superadmin/add', [SuperAdminController::class, 'pasienadd'])->name('superadmin.add');
     Route::post('/superadmin/add', [SuperAdminController::class, 'pasinadd'])->name('superadmin.add');
+
     Route::get('/superadmin/bank', [SuperAdminController::class, 'bank'])->name('superadmin.bank');
     Route::post('/superadmin/bank', [SuperAdminController::class, 'banks'])->name('superadmin.bank');
+
     Route::get('/superadmin/departemen', [SuperAdminController::class, 'departem'])->name('superadmin.departemen');
     Route::post('/superadmin/departemen', [SuperAdminController::class, 'depar'])->name('superadmin.departemen');
+
     Route::get('/superadmin/bidang', [SuperAdminController::class, 'bidang'])->name('superadmin.bidang');
     Route::post('/superadmin/bidang', [SuperAdminController::class, 'bidangs'])->name('superadmin.bidang');
+
     Route::get('/superadmin/jabatan', [SuperAdminController::class, 'jabatan'])->name('superadmin.jabatan');
     Route::post('/superadmin/jabatan', [SuperAdminController::class, 'jabatans'])->name('superadmin.jabatan');
+
     Route::get('/superadmin/pendidikan', [SuperAdminController::class, 'pendidikan'])->name('superadmin.pendidikan');
     Route::post('/superadmin/pendidikan', [SuperAdminController::class, 'pendidikans'])->name('superadmin.pendidikan');
+
     Route::get('/superadmin/grupjabatan', [SuperAdminController::class, 'grupjabatan'])->name('superadmin.grupjabatan');
     Route::post('/superadmin/grupjabatan', [SuperAdminController::class, 'grupjabatans'])->name('superadmin.grupjabatan');
+
     Route::get('/superadmin/resikokerja', [SuperAdminController::class, 'resikokerja'])->name('superadmin.resikokerja');
     Route::post('/superadmin/resikokerja', [SuperAdminController::class, 'resikokerjas'])->name('superadmin.resikokerja');
+
     Route::get('/superadmin/statswp', [SuperAdminController::class, 'statwp'])->name('superadmin.statwp');
     Route::post('/superadmin/statswp', [SuperAdminController::class, 'statwps'])->name('superadmin.statwp');
 

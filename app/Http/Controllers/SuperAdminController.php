@@ -23,6 +23,7 @@ class SuperAdminController extends Controller
         $title = 'Rs Apps';
         return view('superadmin.index', compact('title'));
     }
+
     public function pasienadd()
     {
         $rspasiens = rspasien::all();
@@ -111,6 +112,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add Bank
     public function bank()
     {
         $namabank = rsbank::all();
@@ -134,6 +136,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add departemen
     public function departem()
     {
         $depar = rsdepartemen::all();
@@ -158,6 +161,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add bidang
     public function bidang()
     {
         $bidangs = rsbidang::all();
@@ -182,6 +186,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add jabatan
     public function jabatan()
     {
         $jabatans = rsjabatan::all();
@@ -206,6 +211,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add pendidikan
     public function pendidikan()
     {
         $pendidikans = rspendidikan::all();
@@ -230,6 +236,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add grup jabatan
     public function grupjabatan()
     {
         $jabatans = rsjabatan::all();
@@ -256,6 +263,7 @@ class SuperAdminController extends Controller
     }
 
 
+    //add status wajib pajak
     public function statwp()
     {
         $statwp = rsstatwp::all();
@@ -281,6 +289,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add resiko kerja
     public function resikokerja()
     {
         $resikokerja = rsreiskokerja::all();
@@ -305,6 +314,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add emergency
     public function emergency()
     {
         $resikokerja = rsemergency::all();
