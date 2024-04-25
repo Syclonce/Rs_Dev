@@ -8,9 +8,12 @@ use App\Models\rsdepartemen;
 use App\Models\rsemergency;
 use App\Models\rsgrupjabatan;
 use App\Models\rsjabatan;
+use App\Models\rsmetodracik;
 use App\Models\rspasien;
 use App\Models\rspendidikan;
 use App\Models\rsreiskokerja;
+use App\Models\rsruangan;
+use App\Models\rsstatuskerja;
 use App\Models\rsstatwp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -23,6 +26,7 @@ class SuperAdminController extends Controller
         $title = 'Rs Apps';
         return view('superadmin.index', compact('title'));
     }
+
     public function pasienadd()
     {
         $rspasiens = rspasien::all();
@@ -111,6 +115,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add Bank
     public function bank()
     {
         $namabank = rsbank::all();
@@ -134,6 +139,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add departemen
     public function departem()
     {
         $depar = rsdepartemen::all();
@@ -158,6 +164,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add bidang
     public function bidang()
     {
         $bidangs = rsbidang::all();
@@ -182,6 +189,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add jabatan
     public function jabatan()
     {
         $jabatans = rsjabatan::all();
@@ -206,6 +214,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add pendidikan
     public function pendidikan()
     {
         $pendidikans = rspendidikan::all();
@@ -230,6 +239,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add grup jabatan
     public function grupjabatan()
     {
         $jabatans = rsjabatan::all();
@@ -256,6 +266,7 @@ class SuperAdminController extends Controller
     }
 
 
+    //add status wajib pajak
     public function statwp()
     {
         $statwp = rsstatwp::all();
@@ -281,6 +292,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add resiko kerja
     public function resikokerja()
     {
         $resikokerja = rsreiskokerja::all();
@@ -305,6 +317,7 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add emergency
     public function emergency()
     {
         $resikokerja = rsemergency::all();
@@ -322,6 +335,81 @@ class SuperAdminController extends Controller
         ]);
 
         if ($grupjabatan) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    //add Ruang OK
+    public function ruangan()
+    {
+        $ruangan = rsruangan::all();
+        $title = 'Rs Apps';
+        return view('superadmin.ruanggan', compact('title','ruangan'));
+    }
+
+    public function ruanganok(Request $request)
+    {
+
+        $grupjabatan = rsruangan::create([
+            'kode_ruangan' => $request->input('kode'),
+            'nama_ruangan' => $request->input('name'),
+        ]);
+
+        if ($grupjabatan) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    //add metode racik
+    public function metoderacik()
+    {
+        $metoderacik = rsmetodracik::all();
+        $title = 'Rs Apps';
+        return view('superadmin.metoderacik', compact('title','metoderacik'));
+    }
+
+    public function metoderaciks(Request $request)
+    {
+
+        $metoderacik = rsmetodracik::create([
+            'kode_racik' => $request->input('kode'),
+            'nama_racik' => $request->input('name'),
+        ]);
+
+        if ($metoderacik) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    //add status kerja
+    public function statsker()
+    {
+        $statsker = rsstatuskerja::all();
+        $title = 'Rs Apps';
+        return view('superadmin.statsker', compact('title','statsker'));
+    }
+
+    public function statskers(Request $request)
+    {
+
+        $statsker = rsstatuskerja::create([
+            'stat_kerja' => $request->input('kode'),
+            'ket_stats' => $request->input('name'),
+        ]);
+
+        if ($statsker) {
             // Redirect with success message
             return redirect()->back()->with('success', 'Patient data has been successfully stored.');
         } else {
