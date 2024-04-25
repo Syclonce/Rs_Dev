@@ -45,7 +45,7 @@
                                 <td>{{ $ruangan->kode_ruangan }}</td>
                                 <td>{{ $ruangan->nama_ruangan }}</td>
                                 <td>
-                                    <a href="{{ route('superadmin.ruanganok', ['id' => $ruangan->id]) }}" class="btn btn-primary">
+                                    <a href="{{ route('superadmin.ruangan', ['id' => $ruangan->id]) }}" class="btn btn-primary">
                                         Delete
                                     </a>
                                 </td>
@@ -76,7 +76,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('superadmin.ruanganok') }}" method="POST">
+                <form action="{{ route('superadmin.ruangan') }}" method="POST">
                     @csrf
                     <div class="container-fluid">
                         <div class="row">

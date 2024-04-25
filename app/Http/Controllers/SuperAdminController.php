@@ -8,9 +8,11 @@ use App\Models\rsdepartemen;
 use App\Models\rsemergency;
 use App\Models\rsgrupjabatan;
 use App\Models\rsjabatan;
+use App\Models\rsmetodracik;
 use App\Models\rspasien;
 use App\Models\rspendidikan;
 use App\Models\rsreiskokerja;
+use App\Models\rsruangan;
 use App\Models\rsstatwp;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -332,6 +334,56 @@ class SuperAdminController extends Controller
         ]);
 
         if ($grupjabatan) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    //add Ruang OK
+    public function ruangan()
+    {
+        $ruangan = rsruangan::all();
+        $title = 'Rs Apps';
+        return view('superadmin.ruanggan', compact('title','ruangan'));
+    }
+
+    public function ruanganok(Request $request)
+    {
+
+        $grupjabatan = rsruangan::create([
+            'kode_ruangan' => $request->input('kode'),
+            'nama_ruangan' => $request->input('name'),
+        ]);
+
+        if ($grupjabatan) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
+    //add metode racik
+    public function metoderacik()
+    {
+        $metoderacik = rsmetodracik::all();
+        $title = 'Rs Apps';
+        return view('superadmin.metoderacik', compact('title','metoderacik'));
+    }
+
+    public function metoderaciks(Request $request)
+    {
+
+        $metoderacik = rsmetodracik::create([
+            'kode_racik' => $request->input('kode'),
+            'nama_racik' => $request->input('name'),
+        ]);
+
+        if ($metoderacik) {
             // Redirect with success message
             return redirect()->back()->with('success', 'Patient data has been successfully stored.');
         } else {
