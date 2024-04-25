@@ -193,7 +193,7 @@
           {{-- <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"> --}}
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">SIMRS DEV</a>
         </div>
       </div>
 
@@ -285,32 +285,180 @@
           <!-- awal -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <i class="fas fa-shopping-cart"></i>
               <p>
-          
                 KASIR
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-
-            <ul class="nav nav-treeview">
+              <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{  route('superadmin.add') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Rawat Jalan</p>
+                <i class="fas fa-weight-hanging"></i>
+                  <p>Pembayaran</p>
+                  <i class="right fas fa-angle-left"></i>
                 </a>
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kunjungan</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>UBL</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Transaksi Sebelumnya</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Merge Kwitansi</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>E Hospital</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Seting</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
               </li>
               <li class="nav-item">
                 <a href="./index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Rawat Inap</p>
+                  <p>Titipan</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="./index3.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>UGD/IGD</p>
+                  <p>Angsuran</p>
                 </a>
+                </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Retur Pasien</p>
+                </a>
+                </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Nota dan Invoice</p>
+                </a>
+                </li>
+              <li class="nav-item">
+                <a href="./index3.html" class="nav-link">
+                <i class="fas fa-tasks"></i>
+                  <p>Daftar Tarif</p>
+                  <i class="right fas fa-angle-left"></i>
+                </a>
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tarif Basic</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tarif Bertingkat</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tarif Paket</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tarif Kelas Ranap</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tarif Lab</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tarif Radiologi</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Tarif Diagnosa</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
               </li>
             </ul>
           </li>
