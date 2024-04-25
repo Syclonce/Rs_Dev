@@ -39,13 +39,13 @@
                       </tr>
                     </thead>
                     <tbody>
-                            @foreach($ruangan as $ruangan)
+                            @foreach($statsker as $statsker)
                             <tr>
-                                <td>{{ $ruangan->id }}</td>
-                                <td>{{ $ruangan->kode_ruangan }}</td>
-                                <td>{{ $ruangan->nama_ruangan }}</td>
+                                <td>{{ $statsker->id }}</td>
+                                <td>{{ $statsker->kode_kerja }}</td>
+                                <td>{{ $statsker->nama_resiko }}</td>
                                 <td>
-                                    <a href="{{ route('superadmin.ruangan', ['id' => $ruangan->id]) }}" class="btn btn-primary">
+                                    <a href="{{ route('superadmin.statsker', ['id' => $statsker->id]) }}" class="btn btn-primary">
                                         Delete
                                     </a>
                                 </td>
@@ -76,7 +76,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('superadmin.ruangan') }}" method="POST">
+                <form action="{{ route('superadmin.statsker') }}" method="POST">
                     @csrf
                     <div class="container-fluid">
                         <div class="row">
