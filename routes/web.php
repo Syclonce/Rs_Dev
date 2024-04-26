@@ -25,10 +25,12 @@ Route::middleware(['auth', 'verified', 'role:Super-Admin'])->group(function () {
     Route::get('/superadmin', [SuperAdminController::class, 'index'])->name('superadmin');
 
     Route::get('/superadmin/add', [SuperAdminController::class, 'pasienadd'])->name('superadmin.add');
-    Route::post('/superadmin/add', [SuperAdminController::class, 'pasinadd'])->name('superadmin.add');
+    Route::get('/superadmin/pasienbaru', [SuperAdminController::class, 'pasienadd'])->name('superadmin.pasienbaru');
+    Route::post('/superadmin/pasienbaru', [SuperAdminController::class, 'pasinadd'])->name('superadmin.pasienbaru');
 
     Route::get('/superadmin/bank', [SuperAdminController::class, 'bank'])->name('superadmin.bank');
     Route::post('/superadmin/bank', [SuperAdminController::class, 'banks'])->name('superadmin.bank');
+    Route::post('/superadmin/bank/{id}', [SuperAdminController::class, 'bankd'])->name('superadmin.banks');
 
     Route::get('/superadmin/departemen', [SuperAdminController::class, 'departem'])->name('superadmin.departemen');
     Route::post('/superadmin/departemen', [SuperAdminController::class, 'depar'])->name('superadmin.departemen');

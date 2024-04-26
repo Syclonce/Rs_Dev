@@ -11,5 +11,6 @@ class rsbidang extends Model
     protected $table = 'rs_bidang';
     protected $fillable = [
         'nama',
+        'keterangan',
     ];
 }

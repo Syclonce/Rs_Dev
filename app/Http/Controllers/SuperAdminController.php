@@ -127,6 +127,7 @@ class SuperAdminController extends Controller
         $nama = $request->input('name');
 
         $namabank = rsbank::create([
+            'coa_bank' => $request->input('coa'),
             'nama' => $request->input('name'),
         ]);
 
@@ -139,20 +140,45 @@ class SuperAdminController extends Controller
         }
     }
 
+    public function bankd($id)
+    {
+        $namabank = rsbank::find($id);
+        $namabank->delete();
+        return redirect()->route('superadmin.bank')->with('success', 'Bank deleted successfully');
+
+    }
+
+
     //add departemen
     public function departem()
     {
         $depar = rsdepartemen::all();
+        $bidangs = rsbidang::all();
+        $departemenas = rsdepartemen::join('rs_bidang', 'rs_departemen.bidang', '=', 'rs_bidang.id')
+                ->select('rs_departemen.*', 'rs_bidang.nama as nama_bidang')
+                ->get();
         $title = 'Rs Apps';
-        return view('superadmin.depar', compact('title', 'depar'));
+        return view('superadmin.depar', compact('title', 'depar','bidangs', 'departemenas'));
     }
 
     public function depar(Request $request)
     {
-        $nama = $request->input('name');
-
         $namabank = rsdepartemen::create([
-            'nama' => $request->input('name'),
+            'nama'=> $request->input('name'),
+            'jenis_departemen'=> $request->input('jenis'),
+            'inisial_poli'=> $request->input('Kode'),
+            'text_layar_antrian'=> $request->input('display'),
+            'bidang'=> $request->input('bidang'),
+            'index_touchscreen_registrasi'=> $request->input('Kodeindex'),
+            'coa_unit'=> $request->input('coaunit'),
+            'coa_piutang'=> $request->input('coapi'),
+            'coa_pendapatan'=> $request->input('coapen'),
+            'coa_biaya'=> $request->input('coa'),
+            'coa_hpp'=> $request->input('coahhp'),
+            'coa_persediaan'=> $request->input('coaper'),
+            'bpjs_maping'=> $request->input('bpjs'),
+            'casmix_grup'=> $request->input('casemix'),
+            'kode_ihs'=> $request->input('ihs')
         ]);
 
         if ($namabank) {
@@ -174,10 +200,9 @@ class SuperAdminController extends Controller
 
     public function bidangs(Request $request)
     {
-        $nama = $request->input('name');
-
         $bidang = rsbidang::create([
             'nama' => $request->input('name'),
+            'keterangan' => $request->input('ket'),
         ]);
 
         if ($bidang) {

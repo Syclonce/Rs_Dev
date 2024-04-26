@@ -34,6 +34,7 @@
                       <tr>
                         <th>No</th>
                         <th>Nama Bidang</th>
+                        <th>Keterangan</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -42,6 +43,7 @@
                         <tr>
                             <td>{{ $bidang->id }}</td>
                             <td>{{ $bidang->nama }}</td>
+                            <td>{{ $bidang->keterangan}}</td>
                             <td>
                                 <a href="{{ route('superadmin.bidang', ['id' => $bidang->id]) }}" class="btn btn-primary">
                                     Delete
@@ -82,6 +84,14 @@
                                 <div class="form-group">
                                     <label for="name">Nama</label>
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Masukan Nama .">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="ket">Keterangan</label>
+                                    <input type="text" class="form-control" id="ket" name="ket" placeholder="Masukan Nama .">
                                 </div>
                             </div>
                         </div>

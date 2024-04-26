@@ -16,6 +16,18 @@
     </div>
     <!-- /.content-header -->
 
+    {{-- @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif --}}
+
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -33,6 +45,7 @@
                     <thead>
                       <tr>
                         <th>No</th>
+                        <th>COA Bank</th>
                         <th>Nama Bank</th>
                         <th>Action</th>
                       </tr>
@@ -41,11 +54,15 @@
                         @foreach($namabank as $bank)
                         <tr>
                             <td>{{ $bank->id }}</td>
+                            <td>{{ $bank->coa_bank }}</td>
                             <td>{{ $bank->nama }}</td>
                             <td>
-                                <a href="{{ route('superadmin.bank', ['id' => $bank->id]) }}" class="btn btn-primary">
-                                    Delete
-                                </a>
+                                <form action="{{ route('superadmin.banks', ['id' => $bank->id]) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary">
+                                        Delete
+                                    </button>
+                                </form>
                             </td>
                             <!-- Add more table cells for other columns as needed -->
                         </tr>
@@ -78,7 +95,13 @@
                     @csrf
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-md-12">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="coa">coa</label>
+                                    <input type="text" class="form-control" id="coa" name="coa" placeholder="Masukan Nama .">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="name">Nama</label>
                                     <input type="text" class="form-control" id="name" name="name" placeholder="Masukan Nama .">
