@@ -33,22 +33,22 @@
                     <table  class="table table-bordered table-striped">
                         <thead>
                         <tr>
+                            <th>ID Poli</th>
                             <th>Nama Departemen</th>
+                            <th>Jenis Departemen</th>
                             <th>Nama Departemen</th>
-                            <th>Nama Departemen</th>
-                            <th>Nama Departemen</th>
-                            <th>Nama Departemen</th>
-                            <th>Nama Departemen</th>
+                            <th>Maping BPJS</th>
+                            <th>Kode IHS</th>
                             <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach($depar as $departemens)
+                            @foreach($departemenas as $departemens)
                             <tr>
                                 <td> {{ $departemens->inisial_poli }} </td>
                                 <td> {{ $departemens->nama }} </td>
                                 <td> {{ $departemens->jenis_departemen }} </td>
-                                {{-- grup --}}
+                                <td> {{ $departemens->nama_bidang }} </td>
                                 <td> {{ $departemens->bpjs_maping }} </td>
                                 <td> {{ $departemens->kode_ihs }} </td>
                                 <td>
@@ -100,6 +100,15 @@
                                     <input type="text" class="form-control" id="Kode" name="Kode" placeholder="Masukan Kode Departemen">
                                 </div>
                             </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bidang">Grup Departemen</label>
+                            <select class="custom-select" id="bidang" name="bidang">
+                                <option selected disabled value="">Pilih Jenis Kelamin</option>
+                                @foreach ($bidangs as $bidangs)
+                                    <option value="{{ $bidangs->id }}">{{ $bidangs->nama }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="row">
                             <div class="col-md-12">

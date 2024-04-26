@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('nama'); // Creates 'nama' column of type string
             $table->string('jenis_departemen'); // Creates 'nama' column of type string
             $table->string('inisial_poli'); // Creates 'nama' column of type string
+            $table->string('bidang'); // Creates 'nama' column of type string
             $table->string('text_layar_antrian'); // Creates 'nama' column of type string
             $table->string('index_touchscreen_registrasi'); // Creates 'nama' column of type string
             $table->string('coa_unit'); // Creates 'nama' column of type string

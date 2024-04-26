@@ -144,8 +144,12 @@ class SuperAdminController extends Controller
     public function departem()
     {
         $depar = rsdepartemen::all();
+        $bidangs = rsbidang::all();
+        $departemenas = rsdepartemen::join('rs_bidang', 'rs_departemen.bidang', '=', 'rs_bidang.id')
+                ->select('rs_departemen.*', 'rs_bidang.nama as nama_bidang')
+                ->get();
         $title = 'Rs Apps';
-        return view('superadmin.depar', compact('title', 'depar'));
+        return view('superadmin.depar', compact('title', 'depar','bidangs', 'departemenas'));
     }
 
     public function depar(Request $request)
@@ -155,6 +159,7 @@ class SuperAdminController extends Controller
             'jenis_departemen'=> $request->input('jenis'),
             'inisial_poli'=> $request->input('Kode'),
             'text_layar_antrian'=> $request->input('display'),
+            'bidang'=> $request->input('bidang'),
             'index_touchscreen_registrasi'=> $request->input('Kodeindex'),
             'coa_unit'=> $request->input('coaunit'),
             'coa_piutang'=> $request->input('coapi'),
@@ -186,10 +191,9 @@ class SuperAdminController extends Controller
 
     public function bidangs(Request $request)
     {
-        $nama = $request->input('name');
-
         $bidang = rsbidang::create([
             'nama' => $request->input('name'),
+            'keterangan' => $request->input('ket'),
         ]);
 
         if ($bidang) {

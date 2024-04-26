@@ -13,6 +13,7 @@ class rsdepartemen extends Model
         'nama',
         'jenis_departemen',
         'inisial_poli',
+        'bidang',
         'text_layar_antrian',
         'index_touchscreen_registrasi',
         'coa_unit',

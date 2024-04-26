@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('rs_bidang', function (Blueprint $table) {
             $table->id(); // Creates auto-incrementing primary key 'id'
             $table->string('nama'); // Creates 'nama' column of type string
+            $table->text('keterangan'); // Creates 'nama' column of type string
             $table->timestamps(); // Creates 'created_at' and 'updated_at' columns for timestamps
         });
     }
