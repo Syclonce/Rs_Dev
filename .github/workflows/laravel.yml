@@ -1,9 +1,9 @@
 name: Laravel
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "Master" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "Master" ]
 jobs:
   app-tests:
     runs-on: ubuntu-latest
@@ -112,7 +112,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-      - name: Deploy to STAGING Server
+      - name: Deploy to Prod
         env:
           DOT_ENV: ${{ secrets.DOT_ENV_STAGING }}
         run: dep deploy staging --tag=${{ env.GITHUB_REF }} -vvv
