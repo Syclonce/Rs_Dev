@@ -475,7 +475,7 @@
               <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{  route('superadmin.add') }}" class="nav-link">
-                <i class="fas fa-weight-hanging"></i>
+                <i class="fas fa-pills"></i>
                   <p>Transaksi</p>
                   <i class="right fas fa-angle-left"></i>
                 </a>
