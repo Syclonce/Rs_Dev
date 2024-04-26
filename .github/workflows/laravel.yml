@@ -27,10 +27,6 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v1
-      - name: NPM Build
-        run: |
-          npm install
-          npm run prod
       - name: Put built assets in Artifacts
         uses: actions/upload-artifact@v1
         with:
@@ -43,10 +39,6 @@ jobs:
     if: github.ref == 'refs/heads/staging'
     steps:
       - uses: actions/checkout@v1
-      - name: NPM Build
-        run: |
-          npm install
-          npm run dev
       - name: Put built assets in Artifacts
         uses: actions/upload-artifact@v1
         with:
@@ -69,8 +61,6 @@ jobs:
         with:
           php-version: 8.3
           extension-csv: mbstring, bcmath
-      - name: Composer install
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
       - name: Setup Deployer
         uses: atymic/deployer-php-action@master
         with:
@@ -97,8 +87,6 @@ jobs:
         with:
           php-version: 8.3
           extension-csv: mbstring, bcmath
-      - name: Composer install
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
       - name: Setup Deployer
         uses: atymic/deployer-php-action@master
         with:
