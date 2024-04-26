@@ -39,7 +39,6 @@
                             <th>Nama Departemen</th>
                             <th>Nama Departemen</th>
                             <th>Nama Departemen</th>
-                            <th>Nama Departemen</th>
                             <th>Action</th>
                         </tr>
                         </thead>
