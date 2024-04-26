@@ -1,9 +1,9 @@
 name: Laravel
 on:
   push:
-    branches: [ "Master" ]
+    branches: [ "master" ]
   pull_request:
-    branches: [ "Master" ]
+    branches: [ "master" ]
 jobs:
   app-tests:
     runs-on: ubuntu-latest
@@ -12,7 +12,7 @@ jobs:
         image: mysql:5.7
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: yes
-          MYSQL_DATABASE: test_db
+          MYSQL_DATABASE: rs_aplikasi
         ports:
           - 3306
         options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
@@ -73,7 +73,7 @@ jobs:
           name: assets
           path: public
       - name: Setup PHP
-        uses: shivammathur/setup-php@master
+        uses: shivammathur/setup-php@v2
         with:
           php-version: 8.3
           extension-csv: mbstring, bcmath
@@ -101,7 +101,7 @@ jobs:
           name: assets
           path: public
       - name: Setup PHP
-        uses: shivammathur/setup-php@master
+        uses: shivammathur/setup-php@v2
         with:
           php-version: 8.3
           extension-csv: mbstring, bcmath
@@ -112,7 +112,7 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
           ssh-known-hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
-      - name: Deploy to Prod
+      - name: Deploy to STAGING Server
         env:
           DOT_ENV: ${{ secrets.DOT_ENV_STAGING }}
         run: dep deploy staging --tag=${{ env.GITHUB_REF }} -vvv
