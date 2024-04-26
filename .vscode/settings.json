@@ -6,6 +6,9 @@
           "position": "center", // alias to `background-position`, default `center`
           "interval": 0 // seconds of interval for carousel, default `0` to disabled.
         },
-        "files.autoSave": "onFocusChange"
+        "files.autoSave": "onFocusChange",
+        "files.exclude": {
+          "**/.git": false
+        }
 
 }
