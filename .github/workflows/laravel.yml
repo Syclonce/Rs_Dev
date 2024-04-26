@@ -1,9 +1,9 @@
 name: Laravel
 on:
   push:
-    branches: [ "update" ]
+    branches: [ "Master" ]
   pull_request:
-    branches: [ "update" ]
+    branches: [ "Master" ]
 jobs:
   app-tests:
     runs-on: ubuntu-latest
