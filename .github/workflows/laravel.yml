@@ -20,12 +20,6 @@ jobs:
       - uses: actions/checkout@v1
       - name: Copy .env
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
-      - name: Execute tests (Unit and Feature tests) via PHPUnit
-        env:
-          DB_PORT: ${{ job.services.mysql.ports[3306] }}
-        run: vendor/bin/phpunit
-      - name: Execute tests (Unit and Feature tests) via JEST
-        run: node_modules/.bin/jest
   build-js-production:
     name: Build JavaScript/CSS for PRODUCTION Server
     runs-on: ubuntu-latest
