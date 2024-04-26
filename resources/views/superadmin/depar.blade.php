@@ -52,7 +52,7 @@
                                 <td> {{ $departemens->bpjs_maping }} </td>
                                 <td> {{ $departemens->kode_ihs }} </td>
                                 <td>
-                                    <a href="{{ route('superadmin.bank', ['id' => $departemens->id]) }}" class="btn btn-primary">
+                                    <a href="{{ route('superadmin.bank', ['id' => $departemens->id]) }}" class="btn btn-primary" method="POST">
                                         Delete
                                     </a>
                                 </td>

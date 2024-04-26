@@ -30,6 +30,7 @@ Route::middleware(['auth', 'verified', 'role:Super-Admin'])->group(function () {
 
     Route::get('/superadmin/bank', [SuperAdminController::class, 'bank'])->name('superadmin.bank');
     Route::post('/superadmin/bank', [SuperAdminController::class, 'banks'])->name('superadmin.bank');
+    Route::post('/superadmin/bank/{id}', [SuperAdminController::class, 'bankd'])->name('superadmin.banks');
 
     Route::get('/superadmin/departemen', [SuperAdminController::class, 'departem'])->name('superadmin.departemen');
     Route::post('/superadmin/departemen', [SuperAdminController::class, 'depar'])->name('superadmin.departemen');

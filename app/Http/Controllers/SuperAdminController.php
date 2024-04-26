@@ -140,6 +140,15 @@ class SuperAdminController extends Controller
         }
     }
 
+    public function bankd($id)
+    {
+        $namabank = rsbank::find($id);
+        $namabank->delete();
+        return redirect()->route('superadmin.bank')->with('success', 'Bank deleted successfully');
+
+    }
+
+
     //add departemen
     public function departem()
     {

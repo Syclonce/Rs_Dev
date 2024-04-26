@@ -16,6 +16,18 @@
     </div>
     <!-- /.content-header -->
 
+    {{-- @if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if(session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif --}}
+
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
@@ -45,9 +57,12 @@
                             <td>{{ $bank->coa_bank }}</td>
                             <td>{{ $bank->nama }}</td>
                             <td>
-                                <a href="{{ route('superadmin.bank', ['id' => $bank->id]) }}" class="btn btn-primary">
-                                    Delete
-                                </a>
+                                <form action="{{ route('superadmin.banks', ['id' => $bank->id]) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary">
+                                        Delete
+                                    </button>
+                                </form>
                             </td>
                             <!-- Add more table cells for other columns as needed -->
                         </tr>
