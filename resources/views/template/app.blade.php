@@ -466,7 +466,7 @@
           <!-- awal -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-prescription-bottle-alt"></i>
               <p>
                 APOTIK / FARMASI
                 <i class="right fas fa-angle-left"></i>
