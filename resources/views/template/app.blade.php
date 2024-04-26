@@ -56,9 +56,16 @@
         </form>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-widget="control-sidebar" data-controlsidebar-slide="true" href="#" role="button">
-          <i class="fas fa-th-large"></i>
-        </a>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons" >
+            <label class="btn btn-secondary active">
+              <input type="radio" name="options" autocomplete="off" checked>
+              <i class="fa-regular fa-sun"></i>
+            </label>
+            <label class="btn btn-secondary">
+              <input type="radio" name="options" autocomplete="off">
+              <i class="fa-solid fa-moon"></i>
+            </label>
+          </div>
       </li>
     </ul>
   </nav>
@@ -1344,6 +1351,38 @@
                 });
             }
         });
+
+        // Event listener untuk perubahan mode
+        $('.btn-group-toggle label').on('click', function() {
+            // Menghapus kelas 'active' dari semua label
+            $('.btn-group-toggle label').removeClass('active');
+            // Menambahkan kelas 'active' ke label yang diklik
+            $(this).addClass('active');
+
+            // Memeriksa apakah label yang diklik adalah label pertama (mode terang)
+            if ($(this).index() === 0) {
+                $('body').removeClass('dark-mode');
+                localStorage.setItem('darkMode', 'disabled'); // Menyimpan preferensi dark mode pada local storage
+            } else {
+                $('body').addClass('dark-mode');
+                localStorage.setItem('darkMode', 'enabled'); // Menyimpan preferensi dark mode pada local storage
+            }
+        });
+
+        // Menerapkan preferensi dark mode saat halaman dimuat
+        $(document).ready(function() {
+            // Memeriksa preferensi dark mode pada local storage
+            var darkModeEnabled = localStorage.getItem('darkMode') === 'enabled';
+
+            // Mengatur mode berdasarkan preferensi yang disimpan
+            if (darkModeEnabled) {
+                $('.btn-group-toggle label:nth-child(2)').addClass('active'); // Menandai label mode gelap
+                $('body').addClass('dark-mode'); // Mengatur mode gelap pada body
+            } else {
+                $('.btn-group-toggle label:nth-child(1)').addClass('active'); // Menandai label mode terang
+            }
+        });
+
 </script>
 </body>
 </html>
