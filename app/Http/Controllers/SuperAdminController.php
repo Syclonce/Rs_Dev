@@ -127,6 +127,7 @@ class SuperAdminController extends Controller
         $nama = $request->input('name');
 
         $namabank = rsbank::create([
+            'coa_bank' => $request->input('coa'),
             'nama' => $request->input('name'),
         ]);
 
@@ -149,10 +150,21 @@ class SuperAdminController extends Controller
 
     public function depar(Request $request)
     {
-        $nama = $request->input('name');
-
         $namabank = rsdepartemen::create([
-            'nama' => $request->input('name'),
+            'nama'=> $request->input('name'),
+            'jenis_departemen'=> $request->input('jenis'),
+            'inisial_poli'=> $request->input('Kode'),
+            'text_layar_antrian'=> $request->input('display'),
+            'index_touchscreen_registrasi'=> $request->input('Kodeindex'),
+            'coa_unit'=> $request->input('coaunit'),
+            'coa_piutang'=> $request->input('coapi'),
+            'coa_pendapatan'=> $request->input('coapen'),
+            'coa_biaya'=> $request->input('coa'),
+            'coa_hpp'=> $request->input('coahhp'),
+            'coa_persediaan'=> $request->input('coaper'),
+            'bpjs_maping'=> $request->input('bpjs'),
+            'casmix_grup'=> $request->input('casemix'),
+            'kode_ihs'=> $request->input('ihs')
         ]);
 
         if ($namabank) {
