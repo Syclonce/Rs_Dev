@@ -385,7 +385,7 @@
                 </li>
               <li class="nav-item">
                 <a href="./index3.html" class="nav-link">
-                <i class="fas fa-tasks"></i>
+                <i class="fas fa-tags"></i>
                   <p>Daftar Tarif</p>
                   <i class="right fas fa-angle-left"></i>
                 </a>
@@ -466,31 +466,79 @@
           <!-- awal -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+            <i class="fas fa-shopping-cart"></i>
               <p>
-          
-                FARMASI
+                APOTIK / FARMASI
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-
-            <ul class="nav nav-treeview">
+              <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{  route('superadmin.add') }}" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                <i class="fas fa-weight-hanging"></i>
                   <p>Transaksi</p>
+                  <i class="right fas fa-angle-left"></i>
                 </a>
-              </li>
-              <li class="nav-item">
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
                 <a href="./index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DEPO</p>
+                  <p>Entry Obat</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Seting</p>
+                  <p>Retur Obat</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Penyerahan Obat</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Template Resep</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Pengkajian Obat</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
+                <!-- submenu -->
+             <ul class="nav nav-treeview">
+                <li class="nav-item">
+                <a href="./index2.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Stock Obat</p>
+                </a>
+              </li>
+                </ul>
+                <!-- submenu-end -->
                 </a>
               </li>
             </ul>
