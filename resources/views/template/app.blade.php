@@ -218,7 +218,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-          
+
                 REGISTRASI
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -244,7 +244,7 @@
                 </a>
                 </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="{{  route('superadmin.pasienbaru') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pasien Baru</p>
                 </a>
@@ -549,7 +549,7 @@
             <a href="#" class="nav-link">
             <i class="fas fa-microscope"></i>
               <p>
-          
+
                 LABORATORIUM
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -582,7 +582,7 @@
             <a href="#" class="nav-link">
             <i class="fas fa-radiation-alt"></i>
               <p>
-          
+
                 RADIOLOGI
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -615,7 +615,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-          
+
                 UGD / IGD
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -648,7 +648,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-          
+
                 E.MEDICAL RECORD
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -720,7 +720,7 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                Setingg
+                SETTING
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -774,7 +774,7 @@
               </p>
             </a>
           </li>
-          
+
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
