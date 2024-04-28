@@ -702,8 +702,6 @@
 <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('dist/js/demo.js') }}"></script>
 <!-- SweetAlert2 -->
 <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 <!-- DataTables  & Plugins -->
@@ -735,8 +733,8 @@
         timerProgressBar: true
     });
 
-    // Saat halaman dimuat, cek apakah ada pesan sukses atau error dari server dan tampilkan SweetAlert sesuai.
-    document.addEventListener('DOMContentLoaded', function() {
+        // Saat halaman dimuat, cek apakah ada pesan sukses atau error dari server dan tampilkan SweetAlert sesuai.
+        document.addEventListener('DOMContentLoaded', function() {
             if ("{{ session('success') }}") {
                 Toast.fire({
                     icon: 'success',
