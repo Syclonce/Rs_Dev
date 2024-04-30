@@ -120,7 +120,8 @@ class SuperAdminController extends Controller
     {
         $namabank = rsbank::all();
         $title = 'Rs Apps';
-        return view('superadmin.bank', compact('title', 'namabank'));
+        $isaktive='active';
+        return view('superadmin.bank', compact('title', 'namabank', 'isaktive'));
     }
     public function banks(Request $request)
     {

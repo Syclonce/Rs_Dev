@@ -119,7 +119,6 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-
                 REGISTRASI
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -588,8 +587,9 @@
             </ul>
           </li>
           <!-- akhir -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+
+          <li class="nav-item {{ \Route::is('superadmin.bank') ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{ \Route::is('superadmin.bank') ? 'active' : ''}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 SETTING
@@ -598,8 +598,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{  route('superadmin.bank') }}" class="nav-link">
+                <a href="{{  route('superadmin.bank') }}" class="nav-link {{ \Route::is('superadmin.bank') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
+
                   <p>Add Bank</p>
                 </a>
               </li>
