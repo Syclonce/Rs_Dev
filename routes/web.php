@@ -65,6 +65,9 @@ Route::middleware(['auth', 'verified', 'role:Super-Admin'])->group(function () {
     Route::get('/superadmin/statsker', [SuperAdminController::class, 'statsker'])->name('superadmin.statsker');
     Route::post('/superadmin/statsker', [SuperAdminController::class, 'statskers'])->name('superadmin.statsker');
 
+    Route::get('/superadmin/bahasa', [SuperAdminController::class, 'bahasa'])->name('superadmin.bahasa');
+    Route::post('/superadmin/bahasa', [SuperAdminController::class, 'bahasas'])->name('superadmin.bahasa');
+
     Route::get('/superadmin/pegawai', [SuperAdminController::class, 'pegawai'])->name('superadmin.pegawai');
 });
 

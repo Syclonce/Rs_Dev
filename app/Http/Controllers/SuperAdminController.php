@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\rsbahasa;
 use App\Models\rsbank;
 use App\Models\rsbidang;
 use App\Models\rsdepartemen;
@@ -120,8 +121,7 @@ class SuperAdminController extends Controller
     {
         $namabank = rsbank::all();
         $title = 'Rs Apps';
-        $isaktive='active';
-        return view('superadmin.bank', compact('title', 'namabank', 'isaktive'));
+        return view('superadmin.bank', compact('title', 'namabank'));
     }
     public function banks(Request $request)
     {
@@ -443,6 +443,32 @@ class SuperAdminController extends Controller
             return redirect()->back()->with('error', 'Failed to store patient data.');
         }
     }
+
+      //add bahasa
+      public function bahasa()
+      {
+          $bahasa = rsbahasa::all();
+          $title = 'Rs Apps';
+          return view('superadmin.bahasa', compact('title','bahasa'));
+      }
+
+      public function bahasas(Request $request)
+    {
+
+        $statsker = rsbahasa::create([
+            'bahasa' => $request->input('name'),
+            'keterangan' => $request->input('ket'),
+        ]);
+
+        if ($statsker) {
+            // Redirect with success message
+            return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+        } else {
+            // Redirect with error message
+            return redirect()->back()->with('error', 'Failed to store patient data.');
+        }
+    }
+
 
     public function pegawai()
     {
