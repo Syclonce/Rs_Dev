@@ -17,8 +17,7 @@ return new class extends Migration
             $table->string('nama_grup_jabatan');
             $table->timestamps(); // Creates 'created_at' and 'updated_at' columns for timestamps
             // // Add foreign key constraint for 'kode_jabatan' field
-            // $table->foreign('kode_jabatan')->references('kode_jabatan')->on('rs_jabatan')
-            //     ->onDelete('restrict')->onUpdate('restrict');
+            $table->foreign('kode_jabatan')->references('kode_jabatan')->on('rs_jabatan')->onDelete('restrict')->onUpdate('restrict');
         });
     }
 
