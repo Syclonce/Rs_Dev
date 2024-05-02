@@ -6,16 +6,20 @@ use App\Models\rsbahasa;
 use App\Models\rsbank;
 use App\Models\rsbidang;
 use App\Models\rsdepartemen;
+use App\Models\rsdesa;
 use App\Models\rsemergency;
 use App\Models\rsgrupjabatan;
 use App\Models\rsjabatan;
+use App\Models\rskabupaten;
 use App\Models\rsmetodracik;
 use App\Models\rspasien;
 use App\Models\rspendidikan;
+use App\Models\rsprovinsi;
 use App\Models\rsreiskokerja;
 use App\Models\rsruangan;
 use App\Models\rsstatuskerja;
 use App\Models\rsstatwp;
+use App\Models\rswilayah;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -469,6 +473,33 @@ class SuperAdminController extends Controller
         }
     }
 
+    //add bahasa
+    public function lokasi()
+    {
+        $provinsi =  rsprovinsi::all();
+        $kabupaten = rskabupaten::with('provinsi')->get();
+        $wilayah = rswilayah::with('kabupaten')->get();
+        $desa = rsdesa::with('wilayah')->limit(10000)->get();
+        $title = 'Rs Apps';
+        return view('superadmin.lokasi', compact('title' , 'provinsi', 'kabupaten','wilayah','desa'));
+    }
+
+    public function lokasis(Request $request)
+  {
+
+      $statsker = rsbahasa::create([
+          'bahasa' => $request->input('name'),
+          'keterangan' => $request->input('ket'),
+      ]);
+
+      if ($statsker) {
+          // Redirect with success message
+          return redirect()->back()->with('success', 'Patient data has been successfully stored.');
+      } else {
+          // Redirect with error message
+          return redirect()->back()->with('error', 'Failed to store patient data.');
+      }
+  }
 
     public function pegawai()
     {

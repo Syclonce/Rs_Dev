@@ -19,46 +19,110 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                            <table id='example2' class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>kode</th>
+                                        <th>Nama Provinsi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($provinsi as $prov)
+                                    <tr>
+                                        <td>{{ $prov->kode }}</td>
+                                        <td>{{ $prov->name }}</td>
+                                        <!-- Add more table cells for other columns as needed -->
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                            <table id='example3' class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>kode</th>
+                                        <th>Nama Kabupaten</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($kabupaten as $kab)
+                                    <tr>
+                                        <td>{{ $kab->provinsi->name }}</td>
+                                        <td>{{ $kab->name }}</td>
+                                        <!-- Add more table cells for other columns as needed -->
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header"></div>
+                        <div class="card-body">
+                            <table id='example4' class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>kode</th>
+                                        <th>Wilayah</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($wilayah as $wil)
+                                    <tr>
+                                        <td>{{ $wil->kabupaten->name }}</td>
+                                        <td>{{ $wil->name }}</td>
+                                        <!-- Add more table cells for other columns as needed -->
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
 
-            <div class="card">
-                <div class="card-header">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                        Launch demo modal
-                    </button>
+                        </div>
+                        <div class="card-body">
+                            <table id='example5' class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>kode</th>
+                                        <th>Desa</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach($desa as $des)
+                                    <tr>
+                                        <td>{{ $des->wilayah->name }}</td>
+                                        <td>{{ $des->name }}</td>
+                                        <!-- Add more table cells for other columns as needed -->
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.card-header -->
-                <div class="card-body">
-                  <table  class="table table-bordered table-striped">
-                    <thead>
-                      <tr>
-                        <th>No</th>
-                        <th>bahasa</th>
-                        <th>Keterangan</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($bahasa as $bahasa)
-                        <tr>
-                            <td>{{ $bahasa->id }}</td>
-                            <td>{{ $bahasa->bahasa }}</td>
-                            <td>{{ $bahasa->keterangan}}</td>
-                            <td>
-                                <a href="{{ route('superadmin.bahasa', ['id' => $bahasa->id]) }}" class="btn btn-primary">
-                                    Delete
-                                </a>
-                            </td>
-                            <!-- Add more table cells for other columns as needed -->
-                        </tr>
-                        @endforeach
-                    </tbody>
-                  </table>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
+            </div>
         </div>
+
     </section>
     <!-- /.content -->
   </div>
@@ -66,7 +130,7 @@
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+{{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl">
         <div class="modal-content">
             <div class="modal-header">
@@ -104,7 +168,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 @endsection
 
 
