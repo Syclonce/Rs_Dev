@@ -119,7 +119,6 @@
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-
                 REGISTRASI
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -588,8 +587,9 @@
             </ul>
           </li>
           <!-- akhir -->
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+
+          <li class="nav-item {{ \Route::is('superadmin.bank') ? 'menu-open' : ''}}">
+            <a href="#" class="nav-link {{ \Route::is('superadmin.bank') ? 'active' : ''}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 SETTING
@@ -598,8 +598,9 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{  route('superadmin.bank') }}" class="nav-link">
+                <a href="{{  route('superadmin.bank') }}" class="nav-link {{ \Route::is('superadmin.bank') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
+
                   <p>Add Bank</p>
                 </a>
               </li>
@@ -702,8 +703,6 @@
 <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="{{ asset('dist/js/demo.js') }}"></script>
 <!-- SweetAlert2 -->
 <script src="{{ asset('plugins/sweetalert2/sweetalert2.min.js') }}"></script>
 <!-- DataTables  & Plugins -->
@@ -726,6 +725,42 @@
         "responsive": true, "lengthChange": false, "autoWidth": false,
         "buttons": ["csv", "excel", "pdf", "print"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+        $('#example2').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": false,
+        "autoWidth": true,
+        "responsive": true,
+        });
+        $('#example3').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": false,
+        "autoWidth": true,
+        "responsive": true,
+        });
+        $('#example4').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": false,
+        "autoWidth": true,
+        "responsive": true,
+        });
+        $('#example5').DataTable({
+        "paging": true,
+        "lengthChange": false,
+        "searching": false,
+        "ordering": true,
+        "info": false,
+        "autoWidth": true,
+        "responsive": true,
+        });
     });
     const Toast = Swal.mixin({
         toast: true,
@@ -735,8 +770,8 @@
         timerProgressBar: true
     });
 
-    // Saat halaman dimuat, cek apakah ada pesan sukses atau error dari server dan tampilkan SweetAlert sesuai.
-    document.addEventListener('DOMContentLoaded', function() {
+        // Saat halaman dimuat, cek apakah ada pesan sukses atau error dari server dan tampilkan SweetAlert sesuai.
+        document.addEventListener('DOMContentLoaded', function() {
             if ("{{ session('success') }}") {
                 Toast.fire({
                     icon: 'success',
