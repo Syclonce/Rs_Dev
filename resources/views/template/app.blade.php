@@ -600,7 +600,6 @@
               <li class="nav-item">
                 <a href="{{  route('superadmin.bank') }}" class="nav-link {{ \Route::is('superadmin.bank') ? 'active' : ''}}">
                   <i class="far fa-circle nav-icon"></i>
-
                   <p>Add Bank</p>
                 </a>
               </li>
@@ -626,6 +625,54 @@
                 <a href="{{  route('superadmin.pendidikan') }}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add pendidikan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{  route('superadmin.grupjabatan') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add grup Jabatan</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{  route('superadmin.resikokerja') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Resiko Kerja</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{  route('superadmin.statwp') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add wajib Pajak</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{  route('superadmin.emergency') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add emergency</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{  route('superadmin.ruangan') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Ruang OK</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{  route('superadmin.metoderacik') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Metode Racik</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{  route('superadmin.statsker') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Status Kerja </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{  route('superadmin.bahasa') }}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Bahasa </p>
                 </a>
               </li>
             </ul>
