@@ -82,7 +82,7 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-  
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -95,7 +95,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{ route('superadmin.add') }}" method="POST">
+                <form action="{{ route('superadmin.pasienbaru') }}" method="POST">
                     @csrf
                     <div class="container-fluid">
                         <div class="row">

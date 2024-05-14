@@ -43,7 +43,6 @@ class SuperAdminController extends Controller
     {
         // Validate the request data
         $validator = Validator::make($request->all(), [
-            'norm' => 'required',
             'tgldftar' => 'required',
             'name' => 'required',
             // Add more validation rules for other fields as needed
@@ -55,36 +54,12 @@ class SuperAdminController extends Controller
                 ->withErrors($validator)
                 ->withInput();
         }
-        // Ambil data dari form
-        $norm = $request->input('norm');
-        $tgldaftar = $request->input('tgldftar');
-        $nama = $request->input('name');
-        $seks = $request->input('sex');
-        $tgllahir = $request->input('tgllahir');
-        $menikah = $request->input('menikah');
-        $agama = $request->input('agama');
-        $ibu = $request->input('ibukdg');
-        $goldar = $request->input('goldar');
-        $perkerja = $request->input('pkj');
-        $pendidikan = $request->input('pendidikan');
-        $penjamin = $request->input('penjamin');
-        $nomorkartu = $request->input('nomorkartu');
-        $keluarga = $request->input('kgr');
-        $namakeluarga = $request->input('namakgr');
-        $noktp = $request->input('noktp');
-        $alamat = $request->input('alamat');
-        $provinsi = $request->input('provinsi');
-        $kota = $request->input('kota');
-        $kecamatan = $request->input('kecamatan');
-        $desa = $request->input('desa');
-        $notpl = $request->input('notpl');
-        $email = $request->input('email');
-        $nowp = $request->input('nowp');
-
+        // Generate nomor RM unik
+        $norm = $this->generateUniqueNorm();
 
         // Simpan data ke database
         $pasienData = rspasien::create([
-            'norm' => $request->input('norm'),
+            'norm' => $norm,
             'tgldaf' => $request->input('tgldftar'),
             'nama' => $request->input('name'),
             'sex' => $request->input('sex'),
@@ -118,6 +93,14 @@ class SuperAdminController extends Controller
             // Redirect with error message
             return redirect()->back()->with('error', 'Failed to store patient data.');
         }
+    }
+
+    private function generateUniqueNorm() {
+        do {
+            $norm = mt_rand(10000000, 99999999); // Generate random number between 10000000 and 99999999
+        } while (Rspasien::where('norm', $norm)->exists()); // Cek apakah nomor sudah ada di database
+
+        return $norm;
     }
 
     //add Bank
